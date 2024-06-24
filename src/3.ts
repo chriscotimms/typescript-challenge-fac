@@ -28,6 +28,15 @@
 ]
 **/
 
-export function findByType(pokedex, type) {
-	// ???
+interface Pokemon {
+	id: number;
+	name: string;
+	type: string[];
+	height: string;
+	weight: string;
+	weaknesses: string[];
+}
+
+export function findByType(pokedex: Pokemon[], type: string): Pokemon[] {
+	return pokedex.filter(pokemon => pokemon.type.includes(type));
 }
